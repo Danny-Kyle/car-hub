@@ -7,6 +7,6 @@ export async function fetchCars() {
     headers: headers,
   });
 
-  const {result} = await response.json();
+  const result = await response.json();
   return result;
 }
