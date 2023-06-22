@@ -1,0 +1,6 @@
+for the Cars Api by API-Ninjas on RapidAPI.com
+the model params on the url is actually a requirement to have cars show 
+
+the url works without the models but has no return value
+
+so to visualise any cars, you must have a parameter in the model param in the Url
