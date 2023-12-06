@@ -6,6 +6,7 @@ import Image from "next/image";
 import { CarProps } from "@/types";
 import CustomButton from "./CustomButton";
 import { calculateCarRent } from '../utils/index';
+import CarDetails from "./CarDetails";
 
 interface carCardProps {
   car: CarProps;
@@ -14,7 +15,7 @@ interface carCardProps {
 const CarCard = ({car}: carCardProps) => {
   const { city_mpg, make, model, transmission, year, drive } = car;
   const carRent = calculateCarRent(city_mpg, year);
-  const [first, setFirst] = useState()
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
     <div className="car-card group">
@@ -63,6 +64,8 @@ const CarCard = ({car}: carCardProps) => {
           />
         </div>
       </div>
+
+      <CarDetails isOpen={isOpen} closeModal={()=> setIsOpen(false)} car={car}/>
     </div>
   )
 }
